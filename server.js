@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY_ID;
 const AWS_SECRET_KEY = process.env.AWS_SECRET_ACCESS_KEY;
-const PORT = process.env.SERVER_PORT || 8080;
+const APP_PORT = process.env.SERVER_PORT || 8080;
 
 const dbConfig = {
       host: process.env.DB_HOST,
