@@ -81,10 +81,11 @@ app.get('/api/products/search', async (req, res) => {
 // Products API
 app.get('/api/products', async (req, res) => {
   const { category_id } = req.query;
-  let query = 'SELECT id, title, price, thumbnail FROM ray_products ORDER BY created_at DESC';
+  let query = 'SELECT id, title, price, thumbnail FROM ray_products';
   const params = [];
   if (category_id) {
     query += ' WHERE category_id = ?';
+    query += ' ORDER BY created_at DESC';
     params.push(category_id);
   }
   query += ' LIMIT 50';
