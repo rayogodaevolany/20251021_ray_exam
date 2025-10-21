@@ -27,7 +27,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 const s3 = new AWS.S3({
     accessKeyId: AWS_ACCESS_KEY,
     secretAccessKey: AWS_SECRET_KEY,
-    region: 'ap-northeast-1' 
+    region: AWS_REGION 
 });
 
 
