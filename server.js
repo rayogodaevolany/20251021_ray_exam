@@ -85,9 +85,9 @@ app.get('/api/products', async (req, res) => {
   const params = [];
   if (category_id) {
     query += ' WHERE category_id = ?';
-    query += ' ORDER BY created_at DESC';
     params.push(category_id);
   }
+  query += ' ORDER BY created_at DESC';
   query += ' LIMIT 50';
   const [rows] = await pool.query(query, params);
   res.json(rows);
