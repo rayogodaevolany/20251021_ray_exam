@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <h2>Categories</h2>
+            <ul id="category-list"></ul>
+        </aside>
+
+        <main class="content">
+            <h1>Products</h1>
+		<input type="text" id="search-input" placeholder="Search products..." />
+		  <button id="add-product-btn">Add Product</button>
+
+		  <div id="add-product-modal" class="modal">
+		    <div class="modal-content">
+		      <span id="close-modal" class="close">&times;</span>
+		      <h2>Add Product</h2>
+
+		      <form id="add-product-form" enctype="multipart/form-data">
+			<input type="text" name="title" placeholder="Title" required />
+			<input type="number" name="price" placeholder="Price" step="0.01" required />
+			<input type="text" name="brand" placeholder="Brand" />
+			<input type="text" name="sku" placeholder="SKU" />
+			<textarea name="description" placeholder="Description"></textarea>
+			<input type="file" name="images" id="images" multiple accept="image/*" />
+			<button id="submit-product-btn" type="submit">Submit</button>
+		      </form>
+		    </div>
+		  </div>
+            <div id="product-grid" class="grid"></div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
