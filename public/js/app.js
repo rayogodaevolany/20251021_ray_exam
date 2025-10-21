@@ -109,18 +109,17 @@ document.getElementById('add-product-form').addEventListener('submit', async (e)
   }
 });
 
-
 const hamburger = document.getElementById('hamburger');
 const sidebar = document.getElementById('sidebar');
 
 hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('hidden');
+    sidebar.classList.toggle('show');
 });
 
-// Optional: close sidebar when clicking outside (mobile)
+// Close sidebar when clicking outside (mobile)
 document.addEventListener('click', (e) => {
     if (window.innerWidth <= 768 && !sidebar.contains(e.target) && e.target !== hamburger) {
-        sidebar.classList.add('hidden');
+        sidebar.classList.remove('show');
     }
 });
 
