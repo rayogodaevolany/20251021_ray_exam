@@ -96,3 +96,68 @@ body {
   cursor: pointer;
 }
 
+/* Container layout */
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #f5f5f5;
+  padding: 10px;
+  height: 100vh;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+  transform: translateX(-220px);
+}
+
+/* Hamburger button */
+#hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+}
+
+/* Overlay shadow behind sidebar on mobile */
+#sidebar::before {
+  content: '';
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    z-index: 1000;
+    transform: translateX(-220px);
+  }
+
+  #hamburger {
+    display: block;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .sidebar.show::before {
+    display: block;
+  }
+}
+
