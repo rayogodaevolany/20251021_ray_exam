@@ -31,9 +31,10 @@ body {
     padding: 0.5rem 0;
 }
 
-.sidebar.hidden {
-    transform: translateX(-220px);
+.sidebar.show {
+    transform: translateX(0);
 }
+
 
 /* Hamburger button */
 #hamburger {
